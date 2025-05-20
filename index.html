@@ -7,126 +7,146 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Cormorant+Garamond&display=swap" rel="stylesheet">
   <style>
     body {
+      margin: 0;
       font-family: 'Cormorant Garamond', serif;
-      background: #f9f3e9 url('https://www.transparenttextures.com/patterns/cream-paper.png');
-      color: #3e2f1c;
+      background-color: #0d0d0d;
+      color: #f2e9e4;
       text-align: center;
       padding: 2rem;
-      line-height: 1.7;
       overflow-x: hidden;
     }
 
     h1 {
       font-family: 'Playfair Display', serif;
       font-size: 3rem;
-      color: #8b5e3c;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.3rem;
+      color: #ffb6c1;
     }
 
     p.subtitle {
-      color: #a67c52;
-      margin-bottom: 2rem;
+      color: #ccc;
       font-style: italic;
+      margin-bottom: 2.5rem;
     }
 
-    .msg-btn {
+    .btn {
       display: block;
       margin: 1rem auto;
       padding: 0.7rem 1.5rem;
-      background-color: #f0dfc4;
-      border: 2px solid #c0a97d;
-      border-radius: 10px;
+      background-color: #1a1a1a;
+      border: 1px solid #ff4d6d;
+      color: #ffb6c1;
       font-size: 1.1rem;
-      font-family: 'Cormorant Garamond', serif;
       cursor: pointer;
+      border-radius: 12px;
       transition: background 0.3s ease;
       width: fit-content;
     }
 
-    .msg-btn:hover {
-      background-color: #e1c9a4;
+    .btn:hover {
+      background-color: #ff4d6d;
+      color: #fff;
     }
 
-    .message-box {
+    .card {
       display: none;
-      margin-top: 0.5rem;
-      padding: 1.2rem;
-      background: #fffaf2;
-      border-radius: 12px;
-      border: 2px dashed #c5a880;
+      background: #1c1c1c;
+      border: 2px dashed #ff4d6d;
+      padding: 1.5rem;
+      margin: 1rem auto;
+      border-radius: 15px;
       max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-      font-size: 1.1rem;
-      box-shadow: 0 0 8px rgba(108, 88, 62, 0.1);
+      text-align: left;
+      line-height: 1.6;
+      box-shadow: 0 0 10px rgba(255, 77, 109, 0.2);
     }
 
-    /* Floating hearts */
     .heart {
       position: fixed;
       width: 20px;
       height: 20px;
-      background: url('https://i.imgur.com/zDkVE3e.png') no-repeat center/contain;
-      animation: float 10s linear infinite;
+      background: url('https://i.imgur.com/ExdKOOz.png') no-repeat center/contain;
+      animation: floatUp 10s linear infinite;
       opacity: 0.6;
       pointer-events: none;
+      z-index: 0;
     }
 
-    @keyframes float {
+    @keyframes floatUp {
       0% {
-        transform: translateY(100vh) translateX(0);
+        transform: translateY(100vh) scale(1);
         opacity: 0;
       }
-      20% { opacity: 0.5; }
+      10% { opacity: 0.6; }
       100% {
-        transform: translateY(-20vh) translateX(50px);
+        transform: translateY(-20vh) scale(1.2);
         opacity: 0;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Background music -->
+  <!-- Music -->
   <audio autoplay loop>
     <source src="https://cdn.pixabay.com/download/audio/2023/03/01/audio_490fe4e8c7.mp3?filename=romantic-vintage-piano-14074.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
   </audio>
 
   <h1>Open When… 💌</h1>
   <p class="subtitle">a little love, saved for when you need it most</p>
 
-  <button class="msg-btn" onclick="toggleMessage('msg1')">You miss me</button>
-  <div class="message-box" id="msg1">
-    [Write your heartfelt message for when she misses you.]
+  <button class="btn" onclick="showMessage('msg1')">You miss me</button>
+  <div class="card" id="msg1">
+    <strong>I miss you too — more than words, more than time zones.</strong><br><br>
+    Whenever you're feeling distant, just close your eyes and imagine me holding you close, whispering how proud I am to love someone like you.<br>
+    Even across the miles, we’re still side by side in heart.<br>
+    One day we won’t need screens or calls — we’ll have lazy mornings and late-night cuddles. Until then, I’m here. I’m yours. Always.
   </div>
 
-  <button class="msg-btn" onclick="toggleMessage('msg2')">You're sad</button>
-  <div class="message-box" id="msg2">
-    [Write a comforting message here to lift her spirits.]
+  <button class="btn" onclick="showMessage('msg2')">You're sad</button>
+  <div class="card" id="msg2">
+    <strong>It breaks my heart knowing you’re hurting.</strong><br><br>
+    I wish I could wrap you in a blanket, hold you tight, and take the pain away.<br>
+    You’re not alone. You never are. I’m here for your worst days, not just your best ones.<br>
+    Let this be your little reminder — you matter, you’re loved, and your smile means the world to me.
   </div>
 
-  <button class="msg-btn" onclick="toggleMessage('msg3')">You're angry or upset</button>
-  <div class="message-box" id="msg3">
-    [Remind her of your love and let her know it’s okay to feel angry.]
+  <button class="btn" onclick="showMessage('msg3')">You're angry or upset</button>
+  <div class="card" id="msg3">
+    <strong>Maybe I said the wrong thing. Maybe you're upset about life, or me, or something else. And that’s okay.</strong><br><br>
+    You're allowed to feel everything.<br>
+    I just want you to know — no matter what, I love you.<br>
+    I want to understand you, not argue with you. I want to hold your hand, not win a fight. We’re a team, even when things aren’t perfect.
   </div>
 
-  <button class="msg-btn" onclick="toggleMessage('msg4')">You're stressed or overwhelmed</button>
-  <div class="message-box" id="msg4">
-    [Reassure her that she's doing amazing and you're proud of her.]
+  <button class="btn" onclick="showMessage('msg4')">You're stressed or overwhelmed</button>
+  <div class="card" id="msg4">
+    <strong>Breathe, my love. Everything doesn’t have to be done all at once.</strong><br><br>
+    You’ve made it through 100% of your worst days — and I’ve never stopped believing in you.<br>
+    I see your effort. I see how hard you try. And I admire it so deeply.<br>
+    When you need to rest, rest. When you need to cry, cry. I’ll still be here. You’re not alone.
   </div>
 
-  <button class="msg-btn" onclick="toggleMessage('msg5')">You can't sleep</button>
-  <div class="message-box" id="msg5">
-    [Write something calm, loving, and sleepy here.]
+  <button class="btn" onclick="showMessage('msg5')">You can't sleep</button>
+  <div class="card" id="msg5">
+    <strong>If the night feels heavy and quiet, just know I’m thinking of you too.</strong><br><br>
+    Maybe your mind is racing, or your heart’s a little too full.<br>
+    But baby, it’s okay to let go. You deserve rest, comfort, and peace.<br>
+    Imagine me lying beside you, tracing soft circles on your back, and saying, “Shhh… sleep now, I’ve got you.”<br>
+    Goodnight, my love. I’m with you, even in dreams.
   </div>
 
   <script>
-    function toggleMessage(id) {
-      const box = document.getElementById(id);
-      box.style.display = box.style.display === 'block' ? 'none' : 'block';
+    function showMessage(id) {
+      const messages = document.querySelectorAll('.card');
+      messages.forEach(msg => {
+        if (msg.id === id) {
+          msg.style.display = msg.style.display === 'block' ? 'none' : 'block';
+        } else {
+          msg.style.display = 'none';
+        }
+      });
     }
 
-    // Floating heart generator
     function createHeart() {
       const heart = document.createElement('div');
       heart.classList.add('heart');
@@ -135,7 +155,8 @@
       setTimeout(() => heart.remove(), 10000);
     }
 
-    setInterval(createHeart, 1000); // Create 1 heart per second
+    setInterval(createHeart, 600);
   </script>
 </body>
 </html>
+
