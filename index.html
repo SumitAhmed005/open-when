@@ -13,6 +13,7 @@
       text-align: center;
       padding: 2rem;
       line-height: 1.7;
+      overflow-x: hidden;
     }
 
     h1 {
@@ -59,9 +60,38 @@
       font-size: 1.1rem;
       box-shadow: 0 0 8px rgba(108, 88, 62, 0.1);
     }
+
+    /* Floating hearts */
+    .heart {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background: url('https://i.imgur.com/zDkVE3e.png') no-repeat center/contain;
+      animation: float 10s linear infinite;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+      }
+      20% { opacity: 0.5; }
+      100% {
+        transform: translateY(-20vh) translateX(50px);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 <body>
+  <!-- Background music -->
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2023/03/01/audio_490fe4e8c7.mp3?filename=romantic-vintage-piano-14074.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
   <h1>Open When… 💌</h1>
   <p class="subtitle">a little love, saved for when you need it most</p>
 
@@ -95,6 +125,17 @@
       const box = document.getElementById(id);
       box.style.display = box.style.display === 'block' ? 'none' : 'block';
     }
+
+    // Floating heart generator
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = `${Math.random() * 100}vw`;
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 10000);
+    }
+
+    setInterval(createHeart, 1000); // Create 1 heart per second
   </script>
 </body>
 </html>
