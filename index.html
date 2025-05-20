@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Open When… 💌</title>
+  <title>Open When... 💌</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Cormorant+Garamond&display=swap" rel="stylesheet">
   <style>
     body {
@@ -11,51 +11,52 @@
       font-family: 'Cormorant Garamond', serif;
       background-color: #0d0d0d;
       color: #f2e9e4;
-      text-align: center;
-      padding: 2rem;
       overflow-x: hidden;
+    }
+
+    .container {
+      padding: 2rem;
+      text-align: center;
     }
 
     h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      margin-bottom: 0.3rem;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
       color: #ffb6c1;
     }
 
     p.subtitle {
       color: #ccc;
       font-style: italic;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
     }
 
-    .btn {
-      display: block;
-      margin: 1rem auto;
-      padding: 0.7rem 1.5rem;
-      background-color: #1a1a1a;
-      border: 1px solid #ff4d6d;
-      color: #ffb6c1;
-      font-size: 1.1rem;
+    .btn, .start-btn {
+      background: #ff4d6d;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      font-family: 'Cormorant Garamond', serif;
       cursor: pointer;
-      border-radius: 12px;
-      transition: background 0.3s ease;
-      width: fit-content;
+      transition: background 0.3s;
     }
 
-    .btn:hover {
-      background-color: #ff4d6d;
-      color: #fff;
+    .btn:hover, .start-btn:hover {
+      background: #ff2d55;
     }
 
     .card {
       display: none;
-      background: #1c1c1c;
-      border: 2px dashed #ff4d6d;
-      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid #ff4d6d;
+      padding: 1rem;
       margin: 1rem auto;
-      border-radius: 15px;
-      max-width: 600px;
+      border-radius: 12px;
+      max-width: 500px;
+      backdrop-filter: blur(10px);
       text-align: left;
       line-height: 1.6;
       box-shadow: 0 0 10px rgba(255, 77, 109, 0.2);
@@ -63,8 +64,8 @@
 
     .heart {
       position: fixed;
-      width: 25px;
-      height: 25px;
+      width: 24px;
+      height: 24px;
       background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center/contain;
       animation: floatUp 10s linear infinite;
       opacity: 0.7;
@@ -83,57 +84,68 @@
         opacity: 0;
       }
     }
+
+    #start-screen {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    #main-content {
+      display: none;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
   </style>
 </head>
 <body>
-  <!-- Music -->
-  <audio autoplay loop>
-    <source src="https://cdn.pixabay.com/download/audio/2023/03/01/audio_490fe4e8c7.mp3?filename=romantic-vintage-piano-14074.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-
-  <h1>Open When… 💌</h1>
-  <p class="subtitle">a little love, saved for when you need it most</p>
-
-  <button class="btn" onclick="showMessage('msg1')">You miss me</button>
-  <div class="card" id="msg1">
-    <strong>I miss you too — more than words, more than time zones.</strong><br><br>
-    Whenever you're feeling distant, just close your eyes and imagine me holding you close, whispering how proud I am to love someone like you.<br>
-    Even across the miles, we’re still side by side in heart.<br>
-    One day we won’t need screens or calls — we’ll have lazy mornings and late-night cuddles. Until then, I’m here. I’m yours. Always.
+  <div id="start-screen">
+    <h1>Ready for a little magic? ✨</h1>
+    <button class="start-btn" onclick="startMagic()">Start the Magic</button>
   </div>
 
-  <button class="btn" onclick="showMessage('msg2')">You're sad</button>
-  <div class="card" id="msg2">
-    <strong>It breaks my heart knowing you’re hurting.</strong><br><br>
-    I wish I could wrap you in a blanket, hold you tight, and take the pain away.<br>
-    You’re not alone. You never are. I’m here for your worst days, not just your best ones.<br>
-    Let this be your little reminder — you matter, you’re loved, and your smile means the world to me.
-  </div>
+  <div id="main-content">
+    <audio id="bgMusic" loop>
+      <source src="https://cdn.pixabay.com/download/audio/2023/03/01/audio_490fe4e8c7.mp3?filename=romantic-vintage-piano-14074.mp3" type="audio/mpeg">
+    </audio>
 
-  <button class="btn" onclick="showMessage('msg3')">You're angry or upset</button>
-  <div class="card" id="msg3">
-    <strong>Maybe I said the wrong thing. Maybe you're upset about life, or me, or something else. And that’s okay.</strong><br><br>
-    You're allowed to feel everything.<br>
-    I just want you to know — no matter what, I love you.<br>
-    I want to understand you, not argue with you. I want to hold your hand, not win a fight. We’re a team, even when things aren’t perfect.
-  </div>
+    <div class="container">
+      <h1>Open When... 💌</h1>
+      <p class="subtitle">a little love, saved for when you need it most</p>
 
-  <button class="btn" onclick="showMessage('msg4')">You're stressed or overwhelmed</button>
-  <div class="card" id="msg4">
-    <strong>Breathe, my love. Everything doesn’t have to be done all at once.</strong><br><br>
-    You’ve made it through 100% of your worst days — and I’ve never stopped believing in you.<br>
-    I see your effort. I see how hard you try. And I admire it so deeply.<br>
-    When you need to rest, rest. When you need to cry, cry. I’ll still be here. You’re not alone.
-  </div>
+      <button class="btn" onclick="showMessage('msg1')">You miss me</button>
+      <div class="card" id="msg1">
+        I miss you too — more than words, more than time zones. Close your eyes and imagine me holding you. One day we’ll have lazy mornings together. Until then, I'm here. I'm yours. Always.
+      </div>
 
-  <button class="btn" onclick="showMessage('msg5')">You can't sleep</button>
-  <div class="card" id="msg5">
-    <strong>If the night feels heavy and quiet, just know I’m thinking of you too.</strong><br><br>
-    Maybe your mind is racing, or your heart’s a little too full.<br>
-    But baby, it’s okay to let go. You deserve rest, comfort, and peace.<br>
-    Imagine me lying beside you, tracing soft circles on your back, and saying, “Shhh… sleep now, I’ve got you.”<br>
-    Goodnight, my love. I’m with you, even in dreams.
+      <button class="btn" onclick="showMessage('msg2')">You're sad</button>
+      <div class="card" id="msg2">
+        I wish I could wrap you in a blanket and hold you close. You're not alone. This message is your hug — warm, soft, and full of love.
+      </div>
+
+      <button class="btn" onclick="showMessage('msg3')">You're angry or upset</button>
+      <div class="card" id="msg3">
+        Maybe I said something wrong — or life’s just being unfair. But know this: I love you endlessly. I'm here to understand, not argue.
+      </div>
+
+      <button class="btn" onclick="showMessage('msg4')">You're stressed or overwhelmed</button>
+      <div class="card" id="msg4">
+        Take a breath. Everything doesn’t need to be done all at once. You’ve overcome so much. And you’ve got me. Always.
+      </div>
+
+      <button class="btn" onclick="showMessage('msg5')">You can't sleep</button>
+      <div class="card" id="msg5">
+        If the night feels too long, imagine me whispering, “Shhh… I’ve got you.” Breathe slow. You're safe. You're loved.
+      </div>
+    </div>
   </div>
 
   <script>
@@ -148,6 +160,13 @@
       });
     }
 
+    function startMagic() {
+      document.getElementById('start-screen').style.display = 'none';
+      document.getElementById('main-content').style.display = 'block';
+      document.getElementById('bgMusic').play();
+      setInterval(createHeart, 600);
+    }
+
     function createHeart() {
       const heart = document.createElement('div');
       heart.classList.add('heart');
@@ -155,10 +174,9 @@
       document.body.appendChild(heart);
       setTimeout(() => heart.remove(), 10000);
     }
-
-    setInterval(createHeart, 600);
   </script>
 </body>
 </html>
+
 
 
