@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Open When… 💖</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff0f5;
+      color: #333;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #e91e63;
+      margin-bottom: 1rem;
+    }
+
+    p.subtitle {
+      color: #a83265;
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+
+    .msg-btn {
+      display: block;
+      margin: 1rem auto;
+      padding: 0.8rem 1.5rem;
+      background-color: #ffc1cc;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      width: fit-content;
+    }
+
+    .msg-btn:hover {
+      background-color: #ff9aaf;
+    }
+
+    .message-box {
+      display: none;
+      margin-top: 0.5rem;
+      padding: 1rem;
+      background: #fff;
+      border-radius: 12px;
+      border: 2px dashed #ff69b4;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Open When… 💌</h1>
+  <p class="subtitle">Tap when your heart needs a little love</p>
+
+  <button class="msg-btn" onclick="toggleMessage('msg1')">You miss me</button>
+  <div class="message-box" id="msg1">
+    [Write your heartfelt message for when she misses you.]
+  </div>
+
+  <button class="msg-btn" onclick="toggleMessage('msg2')">You're sad</button>
+  <div class="message-box" id="msg2">
+    [Write a comforting message here to lift her spirits.]
+  </div>
+
+  <button class="msg-btn" onclick="toggleMessage('msg3')">You're angry or upset</button>
+  <div class="message-box" id="msg3">
+    [Remind her of your love and let her know it’s okay to feel angry.]
+  </div>
+
+  <button class="msg-btn" onclick="toggleMessage('msg4')">You're stressed or overwhelmed</button>
+  <div class="message-box" id="msg4">
+    [Reassure her that she's doing amazing and you're proud of her.]
+  </div>
+
+  <button class="msg-btn" onclick="toggleMessage('msg5')">You can't sleep</button>
+  <div class="message-box" id="msg5">
+    [Write something calm, loving, and sleepy here.]
+  </div>
+
+  <button class="msg-btn" onclick="toggleMessage('msg6')">You need to laugh</button>
+  <div class="message-box" id="msg6">
+    [Add a little joke or something silly you two joke about.]
+  </div>
+
+  <button class="msg-btn" onclick="toggleMessage('msg7')">You feel lonely</button>
+  <div class="message-box" id="msg7">
+    [Remind her she’s never alone — you're always with her, even from far.]
+  </div>
+
+  <button class="msg-btn" onclick="toggleMessage('msg8')">You need to feel loved</button>
+  <div class="message-box" id="msg8">
+    [Pour your heart out here. Remind her how loved she is.]
+  </div>
+
+  <script>
+    function toggleMessage(id) {
+      const box = document.getElementById(id);
+      box.style.display = box.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
