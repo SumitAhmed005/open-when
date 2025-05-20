@@ -63,21 +63,21 @@
 
     .heart {
       position: fixed;
-      width: 20px;
-      height: 20px;
-      background: url('https://i.imgur.com/ExdKOOz.png') no-repeat center/contain;
+      width: 25px;
+      height: 25px;
+      background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center/contain;
       animation: floatUp 10s linear infinite;
-      opacity: 0.6;
+      opacity: 0.7;
       pointer-events: none;
       z-index: 0;
     }
 
     @keyframes floatUp {
       0% {
-        transform: translateY(100vh) scale(1);
+        transform: translateY(100vh) scale(0.8);
         opacity: 0;
       }
-      10% { opacity: 0.6; }
+      10% { opacity: 0.7; }
       100% {
         transform: translateY(-20vh) scale(1.2);
         opacity: 0;
@@ -89,6 +89,7 @@
   <!-- Music -->
   <audio autoplay loop>
     <source src="https://cdn.pixabay.com/download/audio/2023/03/01/audio_490fe4e8c7.mp3?filename=romantic-vintage-piano-14074.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
   </audio>
 
   <h1>Open When… 💌</h1>
@@ -159,4 +160,5 @@
   </script>
 </body>
 </html>
+
 
