@@ -14,6 +14,7 @@
       text-align: center;
       padding: 2rem;
       overflow-x: hidden;
+      overflow-y: auto;
       animation: fadeIn 1.2s ease-in-out;
     }
 
@@ -25,21 +26,33 @@
     h1 {
       font-family: 'Playfair Display', serif;
       font-size: 3rem;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.2rem;
       color: #ffb6c1;
+      animation: pulse 2.5s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.02); opacity: 0.9; }
     }
 
     p.subtitle {
-      color: #ccc;
+      color: #aaa;
       font-style: italic;
+      margin-bottom: 2.2rem;
+    }
+
+    .quote {
+      font-size: 1.2rem;
+      color: #ffcfdc;
       margin-bottom: 2.5rem;
     }
 
     .btn {
       display: block;
       margin: 1rem auto;
-      padding: 0.7rem 1.5rem;
-      background: rgba(255, 182, 193, 0.1);
+      padding: 0.8rem 1.5rem;
+      background: rgba(255, 182, 193, 0.12);
       border: 1px solid #ff4d6d;
       color: #ffb6c1;
       font-size: 1.1rem;
@@ -47,7 +60,7 @@
       border-radius: 12px;
       transition: all 0.3s ease;
       width: fit-content;
-      backdrop-filter: blur(4px);
+      backdrop-filter: blur(6px);
     }
 
     .btn:hover {
@@ -60,13 +73,13 @@
       display: none;
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid #ff4d6d;
-      padding: 1.5rem;
+      padding: 1.6rem;
       margin: 1rem auto;
       border-radius: 15px;
       max-width: 600px;
       text-align: left;
       line-height: 1.6;
-      backdrop-filter: blur(6px);
+      backdrop-filter: blur(8px);
       box-shadow: 0 0 10px rgba(255, 77, 109, 0.3);
     }
 
@@ -76,9 +89,9 @@
       height: 20px;
       background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center/contain;
       animation: fallDown 10s linear infinite;
-      opacity: 0.6;
+      opacity: 0.7;
       pointer-events: none;
-      z-index: 0;
+      z-index: 9999;
     }
 
     @keyframes fallDown {
@@ -86,11 +99,27 @@
         transform: translateY(-10vh) scale(1);
         opacity: 0;
       }
-      10% { opacity: 0.7; }
+      10% { opacity: 0.8; }
       100% {
-        transform: translateY(100vh) scale(1.2);
+        transform: translateY(120vh) scale(1.1);
         opacity: 0;
       }
+    }
+
+    .sparkle {
+      position: fixed;
+      width: 4px;
+      height: 4px;
+      background: white;
+      opacity: 0.1;
+      border-radius: 50%;
+      animation: twinkle 3s infinite ease-in-out;
+      z-index: 0;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.4); }
     }
   </style>
 </head>
@@ -98,57 +127,52 @@
 
   <h1>Open When… 💌</h1>
   <p class="subtitle">a little love, saved for when you need it most</p>
+  <p class="quote">“You’re always on my mind, even in the quietest moments.”</p>
 
   <button class="btn" onclick="showMessage('msg1')">You miss me</button>
   <div class="card" id="msg1">
-    <strong>I miss you too — more than words, more than time zones.</strong><br><br>
-    Whenever you're feeling distant, just close your eyes and imagine me holding you close, whispering how proud I am to love someone like you.<br>
-    Even across the miles, we’re still side by side in heart.<br>
-    One day we won’t need screens or calls — we’ll have lazy mornings and late-night cuddles. Until then, I’m here. I’m yours. Always.
+    I know you're probably missing me right now. Maybe even a little more than usual.  
+    So here’s me, sending you the warmest hug wrapped in these words.  
+    You're never really far — just a heartbeat away in my thoughts.  
+    I promise we’ll get through the distance. Until then, close your eyes and feel me right there beside you. Always yours.
   </div>
 
   <button class="btn" onclick="showMessage('msg2')">You're sad</button>
   <div class="card" id="msg2">
-    <strong>It breaks my heart knowing you’re hurting.</strong><br><br>
-    I wish I could wrap you in a blanket, hold you tight, and take the pain away.<br>
-    You’re not alone. You never are. I’m here for your worst days, not just your best ones.<br>
-    Let this be your little reminder — you matter, you’re loved, and your smile means the world to me.
+    I wish I could hold you right now. I know the world gets heavy sometimes, and I hate that I can’t be there to lift it with you.  
+    Please remember, it’s okay to feel down.  
+    You’re not alone. I’m right here, loving you through every bit of it. You matter to me — deeply, endlessly.
   </div>
 
-  <button class="btn" onclick="showMessage('msg3')">You're angry or upset</button>
+  <button class="btn" onclick="showMessage('msg3')">You're upset or angry</button>
   <div class="card" id="msg3">
-    <strong>Maybe I said the wrong thing. Maybe you're upset about life, or me, or something else. And that’s okay.</strong><br><br>
-    You're allowed to feel everything.<br>
-    I just want you to know — no matter what, I love you.<br>
-    I want to understand you, not argue with you. I want to hold your hand, not win a fight. We’re a team, even when things aren’t perfect.
+    Maybe I messed up. Maybe something else did. Either way, it’s okay to feel whatever you’re feeling.  
+    I just want you to know — I still love you, and I want to understand you.  
+    We’re a team, even when things aren’t perfect. Let’s always come back to each other, no matter what.
   </div>
 
-  <button class="btn" onclick="showMessage('msg4')">You're stressed or overwhelmed</button>
+  <button class="btn" onclick="showMessage('msg4')">You're overwhelmed</button>
   <div class="card" id="msg4">
-    <strong>Breathe, my love. Everything doesn’t have to be done all at once.</strong><br><br>
-    You’ve made it through 100% of your worst days — and I’ve never stopped believing in you.<br>
-    I see your effort. I see how hard you try. And I admire it so deeply.<br>
-    When you need to rest, rest. When you need to cry, cry. I’ll still be here. You’re not alone.
+    I see how hard you try. Even on the days when it feels like nothing’s working, I’m still so proud of you.  
+    You don’t have to carry everything alone.  
+    Breathe for a second. Just be. I’m here — cheering for you in every quiet moment and behind every sigh.  
+    Rest when you need to. You've earned it.
   </div>
 
   <button class="btn" onclick="showMessage('msg5')">You can't sleep</button>
   <div class="card" id="msg5">
-    <strong>If the night feels heavy and quiet, just know I’m thinking of you too.</strong><br><br>
-    Maybe your mind is racing, or your heart’s a little too full.<br>
-    But baby, it’s okay to let go. You deserve rest, comfort, and peace.<br>
-    Imagine me lying beside you, tracing soft circles on your back, and saying, “Shhh… sleep now, I’ve got you.”<br>
-    Goodnight, my love. I’m with you, even in dreams.
+    Can’t sleep again, hmm? I get it.  
+    Some nights are just harder. But I’m here.  
+    Imagine me lying next to you, whispering softly:  
+    “Shhh… you’re safe. You’re loved. Everything’s okay.”  
+    Let your heart slow down. Close your eyes, baby. I’m holding you — even if just through this note.
   </div>
 
   <script>
     function showMessage(id) {
       const messages = document.querySelectorAll('.card');
       messages.forEach(msg => {
-        if (msg.id === id) {
-          msg.style.display = msg.style.display === 'block' ? 'none' : 'block';
-        } else {
-          msg.style.display = 'none';
-        }
+        msg.style.display = (msg.id === id && msg.style.display !== 'block') ? 'block' : 'none';
       });
     }
 
@@ -157,10 +181,21 @@
       heart.classList.add('heart');
       heart.style.left = `${Math.random() * 100}vw`;
       document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 10000);
+      setTimeout(() => heart.remove(), 12000);
     }
 
-    setInterval(createHeart, 600);
+    function createSparkle() {
+      const sparkle = document.createElement('div');
+      sparkle.classList.add('sparkle');
+      sparkle.style.left = `${Math.random() * 100}vw`;
+      sparkle.style.top = `${Math.random() * 100}vh`;
+      sparkle.style.animationDuration = `${Math.random() * 5 + 3}s`;
+      document.body.appendChild(sparkle);
+      setTimeout(() => sparkle.remove(), 10000);
+    }
+
+    setInterval(createHeart, 700);
+    setInterval(createSparkle, 800);
   </script>
 </body>
 </html>
