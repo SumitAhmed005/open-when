@@ -27,23 +27,23 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 0.7rem;
+      gap: 0.6rem;
       margin-bottom: 2rem;
     }
 
     .btn {
-  padding: 0.6rem 1.4rem;
-  background: linear-gradient(145deg, #2c2c2c, #1e1e1e);
-  border: 1px solid #ff4d6d;
-  color: #ffd6e0;
-  border-radius: 30px;
-  font-size: 1.05rem;
-  font-family: 'Indie Flower', cursive;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 8px rgba(255, 77, 109, 0.25);
-  backdrop-filter: blur(6px);
-}
+      padding: 0.6rem 1.4rem;
+      background: linear-gradient(145deg, #2c2c2c, #1e1e1e);
+      border: 1px solid #ff4d6d;
+      color: #ffd6e0;
+      border-radius: 30px;
+      font-size: 1.05rem;
+      font-family: 'Indie Flower', cursive;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 8px rgba(255, 77, 109, 0.25);
+      backdrop-filter: blur(6px);
+    }
 
     .btn:hover {
       background: #ff4d6d;
@@ -54,7 +54,7 @@
 
     .note {
       display: none;
-      max-width: 320px;
+      max-width: 340px;
       background: #fff0f5;
       color: #2c2c2c;
       border: 2px dashed #ff4d6d;
@@ -94,17 +94,9 @@
     }
 
     @keyframes fall {
-      0% {
-        transform: translateY(-10vh);
-        opacity: 0;
-      }
-      10% {
-        opacity: 0.8;
-      }
-      100% {
-        transform: translateY(110vh);
-        opacity: 0;
-      }
+      0% { transform: translateY(-10vh); opacity: 0; }
+      10% { opacity: 0.8; }
+      100% { transform: translateY(110vh); opacity: 0; }
     }
 
     @media screen and (max-width: 480px) {
@@ -124,49 +116,83 @@
   <h1>Open When… 💌</h1>
 
   <div class="button-container">
-    <button class="btn" onclick="showNote('note1')">You miss me</button>
-    <button class="btn" onclick="showNote('note2')">You're sad</button>
-    <button class="btn" onclick="showNote('note3')">You're angry</button>
-    <button class="btn" onclick="showNote('note4')">You're overwhelmed</button>
-    <button class="btn" onclick="showNote('note5')">You can't sleep</button>
+    <button class="btn" onclick="showNote('note1')">You feel alone</button>
+    <button class="btn" onclick="showNote('note2')">You miss me</button>
+    <button class="btn" onclick="showNote('note3')">You want our future</button>
+    <button class="btn" onclick="showNote('note4')">You're sad</button>
+    <button class="btn" onclick="showNote('note5')">You're angry</button>
+    <button class="btn" onclick="showNote('note6')">You're overwhelmed</button>
+    <button class="btn" onclick="showNote('note7')">You can't sleep</button>
   </div>
 
   <div class="note" id="note1">
-    I know you’re missing me right now — and I promise, I’m missing you just as much.  
-    If I could, I’d be right there pulling you into a long hug, pressing my forehead to yours, and holding your hand tight until that ache fades.  
-    But since I can’t, here’s my heart on this note, telling you that you’re never far from me.  
-    Close your eyes. Imagine my arms wrapped around you. I’m right there, baby. Always with you.
+    If you’re reading this, there are chances that you might be feeling down and I truly wish I could be there to make things better. I just want you to know how truly incredible you are. You handle so much with such grace, even on days when it feels heavy. I don’t know how you do it, but I am constantly admiring you.
+
+    Now, whenever you’re feeling alone, remember that you’re stronger than any of those feelings. You’ve gotten through so much, and you do it with a kind heart and that amazing smile of yours. You make the world a better place just by being you, and nothing can change that.
+
+    Life is overwhelming, and sometimes it feels like it’s just you against the whole world, but I need you to know that you’re never really alone. Not even for a second. All of this is just a test that we all need to pass, and test toh kabhi easy nahi hote. Joh test easy hote hai vo toh koi bhi aisa wesa pass karjaye.
+
+    Anyways… jab bhi things feel heavy, remember that there are so many people — me included — who care about you deeply. You’re allowed to have hard days and to feel everything fully. Just don’t ever forget how strong, beautiful, and loved you are.
+
+    I am here, cheering you on from wherever I can with whatever I got. If you ever feel alone, remember that you’re constantly living in my heart. We’re in this together, teammate — and we’re gonna get through it together too. You’re never alone in this journey. I’ve got your back, always.
+    <br>~Sumit A.
   </div>
 
   <div class="note" id="note2">
-    When you’re sad, I just want to sit beside you, hold your hand, and let you know you don’t have to be okay all the time.  
-    It’s okay to cry. It’s okay to feel everything deeply.  
-    You’re a soft soul, and sometimes the world feels too sharp. But please remember — I love you through all of it.  
-    You’re never alone. I'm one text, one memory, one heartbeat away.
+    Hey baby, if you opened this message you’re probably missing me right now and trust me, I am missing you even more crazily. If I had the ability to teleport I would do it without a second thought.
+
+    But you should know that no distance stands between how much I want you and crave you. Until I can hold you again, just know that with every heartbeat, every breath, in every fleeting millisecond of Sumit Ahmed’s life, thoughts of you dance through my mind. Baby, you’re not just a part of my day—you’re woven into my heart. And believe me when I say this… every millisecond without you adds to every single millisecond I want to be with you.
+
+    Can’t wait to make up for all this missed time. I love you so much.
   </div>
 
   <div class="note" id="note3">
-    If you're angry — whether it’s at me, something else, or just the world — that’s okay.  
-    I want you to feel safe even when you’re mad.  
-    I may not always say the right things, but I’ll never stop trying to understand you.  
-    I’m not going anywhere. We’ll work through it. You and me, always.
+    Hey you,
+
+    So, you’re curious about what our future looks like right? Let me do the honors and paint a slight picture for you. It’s real, a little bit messy, but completely and absolutely ours.
+
+    First off, we are gonna have a cozy home — not just some Instagram house — with your satin pillow and my Calvin Klein one. Your blankets that I’ll definitely steal. Our house? Full of snacks, your perfumes, and a mix of my terrible and your aesthetic décor.
+
+    Daily life? Equal parts chaos and charm. I’ll cook (because let’s be honest…), and you’ll handle everything else — which balances out because I’ll be handling you. <3
+
+    Travel? Grocery store trips will be adventures, and we’ll probably argue about adopting a dog or cat. Or both. And years later, when we’re grey and soft and old, we’ll still flirt like teenagers. I’ll crack jokes, you’ll roll your eyes but lowkey love it. And maybe, just maybe, we’ll become the kind of couple people call “relationship goals.”
+
+    Whatever the future holds — no matter how many babies 💀 — I know it’s gonna be beautiful because it’s with you. As long as we’re loving, laughing, and sneaking McDonald’s at midnight, we’re gonna be more than okay.
+
+    Love you always,
+    <br>~Sumit A.
   </div>
 
   <div class="note" id="note4">
-    Deep breaths, love. The world can wait.  
-    I know you carry so much on your shoulders.  
-    I see your strength. I see your effort.  
-    And I want you to pause — to rest your head on my chest, take a slow breath, and let me hold the weight with you.  
-    You're not alone. You never have to be.
+    I know you might feel like crying. Or maybe you already are. I want to be the one who wipes those tears and holds your hand tight.
+
+    When you’re sad, don’t hide it. Your emotions are valid. And I want you to feel safe showing them to me — even the messy ones. I love you at your brightest, but I love you just as much when you’re breaking down.
+
+    You don’t have to go through this alone, okay? I’m here. Your sadness is temporary — my love for you is not.
   </div>
 
   <div class="note" id="note5">
-    If your thoughts are spinning and the night feels too quiet…  
-    Imagine my arms around you, warm and close.  
-    My voice, gently whispering, “Shhh… it's okay. You’re safe. I’m here.”  
-    Let your heart slow down. Let your eyes close.  
-    You don’t have to do anything right now except feel loved.  
-    Because you are — so deeply loved.
+    Maybe I did something wrong. Maybe the world did. But either way, I want you to know that no matter how mad you are, I’m still on your side.
+
+    I might not be perfect, but my intentions with you always are. I’ll mess up sometimes, but I’ll always try to make it right. Let’s fight if we must — but let’s never forget we’re on the same team.
+
+    Talk to me. Yell if you must. I can take it — but I’ll never stop loving you.
+  </div>
+
+  <div class="note" id="note6">
+    You’re tired. Not just physically, but deep down tired. And I know it feels like there’s so much to handle all at once.
+
+    But please remember: you don’t need to carry it all alone. I’m right here. Let me be your safe place. Let me be your pause.
+
+    Rest your mind. Breathe. Whatever it is, we’ll face it together — one tiny step at a time.
+  </div>
+
+  <div class="note" id="note7">
+    Can’t sleep again, baby?
+
+    Okay… close your eyes. Picture me running my fingers gently through your hair, whispering how much I love you. Imagine the way I’d hold you if I was there — tight enough to keep the nightmares out, gentle enough to let you fall asleep.
+
+    You don’t have to think about anything right now. Just breathe. You’re okay. You’re safe. I’ve got you.
   </div>
 
   <script>
@@ -189,5 +215,3 @@
   </script>
 </body>
 </html>
-
-
