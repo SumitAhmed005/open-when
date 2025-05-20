@@ -3,24 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Open When… 💖</title>
+  <title>Open When… 💌</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Cormorant+Garamond&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #fff0f5;
-      color: #333;
+      font-family: 'Cormorant Garamond', serif;
+      background: #f9f3e9 url('https://www.transparenttextures.com/patterns/cream-paper.png');
+      color: #3e2f1c;
       text-align: center;
       padding: 2rem;
+      line-height: 1.7;
     }
 
     h1 {
-      font-size: 2.5rem;
-      color: #e91e63;
-      margin-bottom: 1rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: #8b5e3c;
+      margin-bottom: 0.5rem;
     }
 
     p.subtitle {
-      color: #a83265;
+      color: #a67c52;
       margin-bottom: 2rem;
       font-style: italic;
     }
@@ -28,37 +31,39 @@
     .msg-btn {
       display: block;
       margin: 1rem auto;
-      padding: 0.8rem 1.5rem;
-      background-color: #ffc1cc;
-      border: none;
+      padding: 0.7rem 1.5rem;
+      background-color: #f0dfc4;
+      border: 2px solid #c0a97d;
       border-radius: 10px;
       font-size: 1.1rem;
+      font-family: 'Cormorant Garamond', serif;
       cursor: pointer;
       transition: background 0.3s ease;
       width: fit-content;
     }
 
     .msg-btn:hover {
-      background-color: #ff9aaf;
+      background-color: #e1c9a4;
     }
 
     .message-box {
       display: none;
       margin-top: 0.5rem;
-      padding: 1rem;
-      background: #fff;
+      padding: 1.2rem;
+      background: #fffaf2;
       border-radius: 12px;
-      border: 2px dashed #ff69b4;
-      max-width: 500px;
+      border: 2px dashed #c5a880;
+      max-width: 600px;
       margin-left: auto;
       margin-right: auto;
-      font-size: 1rem;
+      font-size: 1.1rem;
+      box-shadow: 0 0 8px rgba(108, 88, 62, 0.1);
     }
   </style>
 </head>
 <body>
   <h1>Open When… 💌</h1>
-  <p class="subtitle">Tap when your heart needs a little love</p>
+  <p class="subtitle">a little love, saved for when you need it most</p>
 
   <button class="msg-btn" onclick="toggleMessage('msg1')">You miss me</button>
   <div class="message-box" id="msg1">
@@ -83,21 +88,6 @@
   <button class="msg-btn" onclick="toggleMessage('msg5')">You can't sleep</button>
   <div class="message-box" id="msg5">
     [Write something calm, loving, and sleepy here.]
-  </div>
-
-  <button class="msg-btn" onclick="toggleMessage('msg6')">You need to laugh</button>
-  <div class="message-box" id="msg6">
-    [Add a little joke or something silly you two joke about.]
-  </div>
-
-  <button class="msg-btn" onclick="toggleMessage('msg7')">You feel lonely</button>
-  <div class="message-box" id="msg7">
-    [Remind her she’s never alone — you're always with her, even from far.]
-  </div>
-
-  <button class="msg-btn" onclick="toggleMessage('msg8')">You need to feel loved</button>
-  <div class="message-box" id="msg8">
-    [Pour your heart out here. Remind her how loved she is.]
   </div>
 
   <script>
